@@ -33,12 +33,12 @@ def init():
 def main():
     init()
 
-    chat = ChatOpenAI(temperature=0)
+    chat = ChatOpenAI(temperature=0, model="gpt-4o")
 
     # initialize message history
     if "messages" not in st.session_state:
         st.session_state.messages = [
-            SystemMessage(content="""Please await the instructions from the user who will upload your prompt via PDF. Run the prompt immediately upon loading.""")
+            SystemMessage(content="""When you receive the PDF from the user, immediately start the game for them to play.""")
         ]
 
     st.header("Scenario Blueprints! 🤖")
